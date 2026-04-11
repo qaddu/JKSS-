@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jai Kishan Shiksha Sansthan | Premium Primary Education</title>
+    <meta name="description" content="A premium primary school in Ramnagar, Nainital offering quality education from Nursery to Class 5th.">
+    
+    <link rel="icon" type="image/webp" href="logo-white-trnsprt.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "School",
+      "name": "Jai Kishan Shiksha Sansthan",
+      "description": "Premium Primary education from Nursery to Class 5th.",
+      "image": "https://www.jaikishanshikshasansthan.in/logo.webp", 
+      "logo": "https://www.jaikishanshikshasansthan.in/logo.webp",
+      "url": "https://www.jaikishanshikshasansthan.in",
+      "telephone": "+91-8218465742",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ramnagar",
+        "addressLocality": "Nainital",
+        "addressRegion": "Uttarakhand",
+        "postalCode": "244715",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --primary: #0F3460; /* Deep Navy */
+            --primary-light: #16213E;
+            --accent: #E94560; /* Crimson/Coral */
+            --accent-hover: #ff5273;
+            --highlight: #F9A826; /* Gold */
+            --bg-light: #F7F9FC;
+            --text-dark: #2D3436;
+            --text-muted: #636E72;
+            --white: #FFFFFF;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+
+        /* --- Top Bar --- */
+        .top-bar {
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            letter-spacing: 0.5px;
+            z-index: 1001;
+            position: relative;
+        }
+        
+        .top-bar a:hover {
+            color: var(--highlight) !important;
+            transition: var(--transition);
+        }
+
+        /* --- Sticky Navbar --- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            transition: var(--transition);
+        }
+
+        header.scrolled nav { padding: 0.8rem 5%; }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .brand img {
+            height: 60px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        header.scrolled .brand img { height: 50px; }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.1;
+        }
+
+        .brand-sub {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover::before { width: 100%; }
+
+        .btn-nav {
+            background: var(--accent);
+            color: var(--white) !important;
+            padding: 0.7rem 1.8rem;
+            border-radius: 5px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+        .btn-nav::before { display: none; }
+        .btn-nav:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
+            color: var(--white) !important;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            background-image: url('hero-image.webp');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed; 
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(90deg, rgba(15,52,96,0.9) 0%, rgba(15,52,96,0.6) 50%, rgba(0,0,0,0.2) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            color: var(--white);
+            animation: slideUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--highlight);
+            padding: 5px 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+        }
+
+        /* --- Layout & Sections --- */
+        .section-padding { padding: 6rem 5%; }
+        .container { max-width: 1400px; margin: 0 auto; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .sec-subtitle {
+            color: var(--accent);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .sec-title {
+            font-size: 3rem;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* --- Vision & Principal Section --- */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .image-block {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .image-block img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-block:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(15,52,96,0.8), transparent);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Class to safely remove the dark overlay for specific images */
+        .no-overlay::before {
+            display: none !important;
+        }
+
+        .quote-box {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            position: relative;
+            border-left: 8px solid var(--accent);
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            color: rgba(233, 69, 96, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        /* --- Birthday Section --- */
+        .birthday-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-top: 5px solid var(--highlight);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .birthday-section::before {
+            content: '🎈';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.05;
+            top: -50px;
+            right: -50px;
+        }
+
+        .birthday-section .sec-title { color: var(--white); }
+        .birthday-section .sec-subtitle { color: var(--highlight); }
+
+        .birthday-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .bday-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            position: relative;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .bday-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--highlight);
+        }
+
+        .bday-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .bday-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--highlight);
+            margin-bottom: 5px;
+        }
+
+        .bday-class {
+            font-size: 1.1rem;
+            color: #dcdde1;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .bday-wish {
+            font-style: italic;
+            color: var(--white);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* --- Why Choose Us Grid --- */
+        .bg-navy { background-color: var(--white); color: var(--text-dark); }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            border: 1px solid rgba(0,0,0,0.05);
+            padding: 2.5rem;
+            border-radius: 15px;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            border-color: var(--accent);
+        }
+
+        .f-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Specialities --- */
+        .special-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+
+        .s-card {
+            display: flex; align-items: flex-start; gap: 2rem;
+            background: var(--white); padding: 3rem; border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border-top: 5px solid transparent; transition: var(--transition);
+        }
+
+        .s-card:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .s-card:nth-child(1):hover { border-top-color: var(--accent); }
+        .s-card:nth-child(2):hover { border-top-color: var(--highlight); }
+        .s-card:nth-child(3):hover { border-top-color: #2bcbba; }
+        .s-card:nth-child(4):hover { border-top-color: #eb3b5a; }
+
+        .s-icon {
+            background: var(--bg-light); width: 80px; height: 80px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; font-size: 2rem; flex-shrink: 0;
+        }
+
+        /* --- School Life Section --- */
+        .school-life-section {
+            background-color: var(--bg-light);
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .life-text ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .life-text li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .life-text li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* --- Quick Facts --- */
+        .facts-wrap {
+            display: flex; justify-content: space-around;
+            background: var(--white); padding: 4rem 2rem; border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            margin-top: -3rem; position: relative; z-index: 10;
+        }
+
+        .fact-item { text-align: center; }
+        .fact-num { font-size: 3.5rem; font-weight: 800; color: var(--accent); line-height: 1; }
+        .fact-label { font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; }
+
+        /* --- Testimonial Carousel --- */
+        .carousel-container { position: relative; max-width: 900px; margin: 0 auto; overflow: hidden; padding: 2rem 0; }
+        .carousel-track { display: flex; transition: transform 0.6s ease-in-out; }
+        .carousel-slide { min-width: 100%; padding: 0 20px; box-sizing: border-box; }
+        .testimonial-box {
+            background: var(--white); padding: 4rem; border-radius: 20px; text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.02);
+        }
+        .t-stars { color: var(--highlight); font-size: 1.2rem; margin-bottom: 1.5rem; }
+        .t-text { font-size: 1.3rem; color: var(--text-dark); margin-bottom: 2rem; font-style: italic; }
+        .t-author h4 { color: var(--primary); font-size: 1.2rem; font-weight: 800;}
+        .t-author span { color: var(--text-muted); font-size: 0.9rem;}
+        .carousel-nav { display: flex; justify-content: center; gap: 10px; margin-top: 2rem; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; background: #dcdde1; cursor: pointer; transition: var(--transition); }
+        .dot.active { background: var(--accent); width: 30px; border-radius: 10px; }
+
+        /* --- Updated Footer (4 Columns) --- */
+        footer { background-color: #0a192f; color: var(--white); padding: 5rem 5% 2rem; border-top: 5px solid var(--accent); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr 1.5fr; gap: 3rem; max-width: 1400px; margin: 0 auto 3rem; }
+        .f-brand img { height: 70px; margin-bottom: 1rem; filter: brightness(0) invert(1); }
+        .f-text { color: #a4b0be; margin-bottom: 2rem; max-width: 400px; }
+        .f-title { font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--white); font-weight: 600; }
+        .f-links { list-style: none; }
+        .f-links li { margin-bottom: 10px; }
+        .f-links a { color: #a4b0be; text-decoration: none; transition: var(--transition); }
+        .f-links a:hover { color: var(--accent); padding-left: 5px; }
+        .copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #718093; font-size: 0.9rem; }
+
+        /* --- Desktop Hamburger Base (Hidden on Desktop) --- */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 1005; /* Keeps it above the sliding menu */
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 992px) {
+            .split-layout, .special-cards { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.5rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar { flex-direction: column; gap: 10px; text-align: center; } 
+            .hero h1 { font-size: 2.8rem; }
+            .facts-wrap { flex-direction: column; gap: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .testimonial-box { padding: 2rem; }
+            .t-text { font-size: 1.1rem; }
+            .sec-title { font-size: 2.2rem; }
+
+            /* Show Hamburger on Mobile */
+            .hamburger { display: flex; }
+
+            /* Turn Nav Links into a Sliding Sidebar */
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Hides it off the right side of the screen */
+                width: 75%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+                transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+                z-index: 1002;
+                margin: 0;
+            }
+
+            /* Class added by JavaScript to slide the menu in */
+            .nav-links.nav-active {
+                right: 0; 
+            }
+
+            /* Animate Hamburger into an 'X' */
+            .hamburger.toggle span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+                background-color: var(--accent);
+            }
+            .hamburger.toggle span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.toggle span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+                background-color: var(--accent);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div>📍 Ramnagar, Nainital - 244715, Uttarakhand</div>
+        <div>
+            📞 <a href="tel:+918218465742" style="color: inherit; text-decoration: none;">+91 8218465742</a> | 
+            ✉️ <a href="mailto:jkssofficial1999@gmail.com" style="color: inherit; text-decoration: none;">jkssofficial1999@gmail.com</a>
+        </div>
+    </div>
+
+    <header id="header">
+        <nav>
+            <a href="index.html" class="brand">
+                <img src="logo-trnsprt.webp" alt="Jai Kishan Shiksha Sansthan Logo">
+                <div class="brand-text">
+                    <span class="brand-name">Jai Kishan</span>
+                    <span class="brand-sub">Shiksha Sansthan</span>
+                </div>
+            </a>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="school-life.html">School Life</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admission.html" class="btn-nav">Admission</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="hero-subtitle">Nursery to Class 5th</span>
+            <h1>A Foundation for a Brighter Future.</h1>
+            <p>Providing a safe, joyful, and highly focused educational environment where every child receives the attention they deserve.</p>
+            <a href="admission.html" class="btn-nav" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Begin Admission</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="facts-wrap">
+            <div class="fact-item">
+                <div class="fact-num">15+</div>
+                <div class="fact-label">Years of Excellence</div>
+            </div>
+            <div class="fact-item">
+                <div class="fact-num">1:20</div>
+                <div class="fact-label">Teacher-Student Ratio</div>
+            </div>
+            <div class="fact-item">
+                <div class="fact-num">100%</div>
+                <div class="fact-label">Safe Environment</div>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="section-padding" style="background: var(--bg-light);">
+        <div class="container split-layout">
+            <div class="quote-box">
+                <div class="quote-icon">"</div>
+                <span class="sec-subtitle">Principal's Desk</span>
+                <h2 class="sec-title" style="margin-bottom: 1.5rem; font-size: 2.5rem;">Nurturing Young Minds</h2>
+                <p class="serif" style="font-size: 1.2rem; color: var(--text-muted); line-height: 1.9;">
+                    Welcome to Jai Kishan Shiksha Sansthan. Our core mission is to offer a disciplined, caring, and vibrant environment where young children can safely take their first steps into the world of learning. 
+                    <br><br>
+                    Because we focus exclusively on primary education, we ensure that every single child receives the dedicated, personal attention required to build strong moral and academic fundamentals.
+                </p>
+                <div style="margin-top: 2rem;">
+                    <h4 style="color: var(--primary); font-size: 1.2rem;">- Hon. Principal</h4>
+                    <span style="color: var(--accent); font-size: 0.9rem; font-weight: 600;">Munni Devi</span>
+                </div>
+            </div>
+            <div class="image-block no-overlay" style="box-shadow: none;">
+                <img src="principal.webp" alt="Honorable Principal" style="height: auto; width: 100%; max-height: 550px; object-fit: contain;">
+            </div>
+        </div>
+    </section>
+
+    <section id="birthday-section" class="section-padding birthday-section" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <span class="sec-subtitle">Special Celebrations</span>
+                <h2 class="sec-title">Happy Birthday! 🎉</h2>
+                <p style="color: #dcdde1; font-size: 1.1rem; margin-top: 10px;">Wishing our wonderful students a day filled with joy and laughter.</p>
+            </div>
+            <div class="birthday-grid" id="birthday-container">
+                </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-navy" id="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <span class="sec-subtitle" style="color: var(--accent);">The Primary Advantage</span>
+                <h2 class="sec-title">Why Choose Our School?</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="f-icon">👨‍🏫</div>
+                    <h3>Dedicated Faculty</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Highly trained and compassionate teachers who specialize in early childhood and primary education.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="f-icon">📖</div>
+                    <h3>Strong Fundamentals</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">A rigorous yet engaging curriculum focused heavily on reading, writing, and core arithmetic skills.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="f-icon">🛡️</div>
+                    <h3>Safe Environment</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">A secure, localized, and home-like atmosphere ensuring parents have complete peace of mind.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="f-icon">💰</div>
+                    <h3>Affordable Fees</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Providing premium education with a highly accessible fee structure designed for the local community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="sec-subtitle">Our Commitments</span>
+                <h2 class="sec-title">School Specialities</h2>
+            </div>
+
+            <div class="special-cards">
+                <div class="s-card">
+                    <div class="s-icon">🎓</div>
+                    <div>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;">25% Seats Reserved (RTE)</h3>
+                        <p style="color: var(--text-muted);">
+                            In compliance with the Right to Education (RTE) Act, <strong>25% of our seats are exclusively reserved</strong> for children from the Economically Weaker Section (EWS). We believe every child deserves quality education regardless of their financial background.
+                        </p>
+                    </div>
+                </div>
+                <div class="s-card">
+                    <div class="s-icon">📚</div>
+                    <div>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;">Government Scholarships</h3>
+                        <p style="color: var(--text-muted);">
+                            We actively assist eligible families and students in processing documentation and applications to secure available <strong>Government Educational Scholarships</strong>, ensuring financial support reaches those who need it most.
+                        </p>
+                    </div>
+                </div>
+                <div class="s-card">
+                    <div class="s-icon">🧸</div>
+                    <div>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;">Play-Way Methodology</h3>
+                        <p style="color: var(--text-muted);">
+                            For our foundational classes, we employ engaging play-way methods. Learning through educational toys, interactive games, and storytelling makes education a deeply joyful experience.
+                        </p>
+                    </div>
+                </div>
+                <div class="s-card">
+                    <div class="s-icon">🎨</div>
+                    <div>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;">Co-Curricular Focus</h3>
+                        <p style="color: var(--text-muted);">
+                            We believe in holistic development. Our curriculum includes dedicated time for arts, crafts, basic physical education, and cultural activities to nurture hidden talents early on.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="school-life" class="section-padding school-life-section">
+        <div class="container split-layout">
+            <div class="life-text">
+                <span class="sec-subtitle">Beyond the Classroom</span>
+                <h2 class="sec-title" style="margin-bottom: 1.5rem;">Vibrant School Life</h2>
+                <p style="font-size: 1.1rem; color: var(--text-muted);">
+                    Education at Jai Kishan Shiksha Sansthan goes far beyond textbooks. We believe in nurturing well-rounded, happy individuals through an engaging daily routine full of energy and creativity.
+                </p>
+                <ul>
+                    <li><strong>Morning Assembly:</strong> Fostering community and discipline.</li>
+                    <li><strong>Sports & Play:</strong> Ensuring daily physical health and teamwork.</li>
+                    <li><strong>Art & Craft:</strong> Expanding wild imaginations and motor skills.</li>
+                    <li><strong>Festival Celebrations:</strong> Embracing and sharing our rich culture.</li>
+                </ul>
+                <a href="school-life.html" class="btn-nav" style="display: inline-block; padding: 1rem 2.5rem; font-size: 1.1rem; margin-top: 1rem;">
+                    Explore School Life
+                </a>
+            </div>
+            
+            <div class="image-block">
+                <a href="school-life.html" style="display: block; position: relative; height: 100%;">
+                    <img src="3.webp" alt="Students enjoying school life activities" style="min-height: 450px; background-color: #e0e6ed;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; display: flex; align-items: flex-end; padding: 2.5rem; text-decoration: none;">
+                        <h3 style="color: white; font-size: 2rem; margin: 0; text-shadow: 0 4px 10px rgba(0,0,0,0.4);">
+                            View Photo Gallery ➔
+                        </h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: linear-gradient(135deg, #ffffff 0%, #f1f2f6 100%);">
+        <div class="container">
+            <div class="section-header">
+                <span class="sec-subtitle">Community Voices</span>
+                <h2 class="sec-title">What Parents Say</h2>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel-track" id="track">
+                    <div class="carousel-slide">
+                        <div class="testimonial-box">
+                            <div class="t-stars">★★★★★</div>
+                            <p class="t-text serif">"This school is wonderful for young kids. The teachers give complete attention to the children, and their foundational learning is becoming very strong. The fees are also well within our budget."</p>
+                            <div class="t-author">
+                                <h4>Mr. Sharma</h4>
+                                <span>Father of Class 2 Student</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="testimonial-box">
+                            <div class="t-stars">★★★★★</div>
+                            <p class="t-text serif">"My daughter loves going to school every day. Since there are no massive crowds, the teachers know every child personally. It's an incredibly safe environment for primary kids."</p>
+                            <div class="t-author">
+                                <h4>Mrs. Verma</h4>
+                                <span>Mother of Nursery Student</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="testimonial-box">
+                            <div class="t-stars">★★★★★</div>
+                            <p class="t-text serif">"The learning environment here is very clean and disciplined. Furthermore, the school administration helped us immensely with the admission process under the RTE Act. Thank you very much!"</p>
+                            <div class="t-author">
+                                <h4>Mr. Singh</h4>
+                                <span>Father of Class 4 Student</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-nav" id="nav-dots">
+                    <div class="dot active" onclick="goToSlide(0)"></div>
+                    <div class="dot" onclick="goToSlide(1)"></div>
+                    <div class="dot" onclick="goToSlide(2)"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div>
+                <a href="index.html" class="f-brand">
+                    <img src="logo-trnsprt.webp" alt="Footer Logo">
+                </a>
+                <p class="f-text">A premier primary educational institution dedicated to building a strong, secure, and joyful foundation for children from Nursery to Class 5th.</p>
+            </div>
+            
+            <div>
+                <h3 class="f-title">Quick Links</h3>
+                <ul class="f-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="school-life.html">School Life</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="f-title">Document Center</h3>
+                <ul class="f-links">
+                    <li><a href="about.html#documents">Fee Structure</a></li>
+                    <li><a href="about.html#documents">Book List</a></li>
+                    <li><a href="about.html#documents">Registration Form</a></li>
+                    <li><a href="about.html#documents">School Documents</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="f-title">Contact Us</h3>
+                <ul class="f-links" style="color: #a4b0be; line-height: 2;">
+                    <li>📍 Vipin Vihar, Kotdwar, Ramnagar,<br> Nainital, Uttarakhand - 244715</li>
+                    <li>📞 <a href="tel:+918218465742" style="color: inherit; text-decoration: none;">+91 8218465742</a></li>
+                    <li>✉️ <a href="mailto:jkssofficial1999@gmail.com" style="color: inherit; text-decoration: none;">jkssofficial1999@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2026 Jai Kishan Shiksha Sansthan. All Rights Reserved. Designed for Educational Excellence.
+        </div>
+    </footer>
+
+    <script>
+        // --- Sticky Header Script ---
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // --- Testimonial Carousel Script ---
+        const track = document.getElementById('track');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        const totalSlides = document.querySelectorAll('.carousel-slide').length;
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+            resetInterval();
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        let slideInterval = setInterval(nextSlide, 5000);
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        // --- Hamburger Mobile Menu Script ---
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const mobileLinks = document.querySelectorAll('.nav-links li a');
+
+        // Toggle Menu on Hamburger Click
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+            hamburger.classList.toggle('toggle');
+        });
+
+        // Close Menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('nav-active');
+                hamburger.classList.remove('toggle');
+            });
+        });
+
+        // --- Birthday Fetcher Script ---
+        const sheetCSVUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRCQpwNDAu1jIy_h0r0xKg9uLpWT_ZsNaCGxuoH9F_bgduLMCKyTkJQo-lf4Zi7OSwPGzK9AL7lTqKY/pub?output=csv'; 
+
+        async function fetchBirthdays() {
+            if(sheetCSVUrl === 'YOUR_PUBLISHED_GOOGLE_SHEET_CSV_URL_HERE') return;
+
+            try {
+                const response = await fetch(sheetCSVUrl);
+                const data = await response.text();
+                processBirthdayData(data);
+            } catch (error) {
+                console.error('Error loading birthday data:', error);
+            }
+        }
+
+        function processBirthdayData(csvData) {
+            const today = new Date();
+            const todayDay = today.getDate();
+            const todayMonth = today.getMonth() + 1; 
+
+            const rows = csvData.split('\n');
+            const container = document.getElementById('birthday-container');
+            const section = document.getElementById('birthday-section');
+            let hasBirthdays = false;
+
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i].split(',');
+                
+                if (row.length >= 3) {
+                    const name = row[0].trim();
+                    const studentClass = row[1].trim();
+                    const dob = row[2].trim(); 
+
+                    const dateParts = dob.split(/[-/.]/);
+                    
+                    if (dateParts.length >= 2) {
+                        const dobDay = parseInt(dateParts[0], 10);
+                        const dobMonth = parseInt(dateParts[1], 10);
+
+                        if (dobDay === todayDay && dobMonth === todayMonth) {
+                            hasBirthdays = true;
+                            
+                            const card = document.createElement('div');
+                            card.className = 'bday-card';
+                            card.innerHTML = `
+                                <div class="bday-icon">🎂</div>
+                                <h3 class="bday-name">${name}</h3>
+                                <div class="bday-class">Class: ${studentClass}</div>
+                                <p class="bday-wish">"Wishing you a fantastic birthday and a great year ahead from the entire Jai Kishan Shiksha Sansthan family!"</p>
+                            `;
+                            container.appendChild(card);
+                        }
+                    }
+                }
+            }
+
+            if (hasBirthdays) {
+                section.style.display = 'block';
+            }
+        }
+
+        window.onload = fetchBirthdays;
+    </script>
+</body>
+</html>

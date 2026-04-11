@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Life | Jai Kishan Shiksha Sansthan</title>
+    <meta name="description" content="Explore the vibrant campus life, daily activities, and events at Jai Kishan Shiksha Sansthan, offering premium primary education in Ramnagar.">
+    
+    <link rel="icon" type="image/webp" href="logo-white-trnsprt.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "School",
+      "name": "Jai Kishan Shiksha Sansthan",
+      "description": "Premium Primary education from Nursery to Class 5th.",
+      "image": "https://www.jaikishanshikshasansthan.in/logo.webp", 
+      "logo": "https://www.jaikishanshikshasansthan.in/logo.webp",
+      "url": "https://www.jaikishanshikshasansthan.in",
+      "telephone": "+91-8218465742",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ramnagar",
+        "addressLocality": "Nainital",
+        "addressRegion": "Uttarakhand",
+        "postalCode": "244715",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --primary: #0F3460; 
+            --primary-light: #16213E;
+            --accent: #E94560; 
+            --accent-hover: #ff5273;
+            --highlight: #F9A826; 
+            --bg-light: #F7F9FC;
+            --text-dark: #2D3436;
+            --text-muted: #636E72;
+            --white: #FFFFFF;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+
+        /* --- Scroll Animation Classes --- */
+        .reveal {
+            opacity: 0; transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* --- Top Bar & Nav --- */
+        .top-bar {
+            background-color: var(--primary-light); color: var(--white);
+            padding: 8px 5%; font-size: 0.85rem; display: flex;
+            justify-content: space-between; align-items: center;
+            letter-spacing: 0.5px; z-index: 1001; position: relative;
+        }
+        .top-bar a:hover { color: var(--highlight) !important; transition: var(--transition); }
+
+        header {
+            position: sticky; top: 0; z-index: 1000;
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition);
+        }
+        header.scrolled { padding: 5px 0; background: rgba(255, 255, 255, 0.98); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; max-width: 1400px; margin: 0 auto; transition: var(--transition); }
+        header.scrolled nav { padding: 0.8rem 5%; }
+
+        .brand { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .brand img { height: 60px; width: auto; transition: var(--transition); }
+        header.scrolled .brand img { height: 50px; }
+        .brand-text { display: flex; flex-direction: column; }
+        .brand-name { font-size: 1.4rem; font-weight: 800; color: var(--primary); line-height: 1.1; }
+        .brand-sub { font-size: 0.75rem; color: var(--accent); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+
+        .nav-links { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; transition: var(--transition); position: relative; }
+        .nav-links a::before { content: ''; position: absolute; bottom: -5px; left: 0; width: 0%; height: 2px; background-color: var(--accent); transition: var(--transition); }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+        .nav-links a:hover::before, .nav-links a.active::before { width: 100%; }
+
+        .btn-nav {
+            background: var(--accent); color: var(--white) !important; padding: 0.7rem 1.8rem;
+            border-radius: 5px; font-weight: 600; box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3); border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-size: 1rem;
+        }
+        .btn-nav::before { display: none; }
+        .btn-nav:hover { background: var(--accent-hover); transform: translateY(-2px); color: var(--white) !important; box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4); }
+
+        /* --- Page Hero Section --- */
+        .page-hero {
+            position: relative; padding: 7rem 5% 5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white); text-align: center;
+        }
+        .page-hero::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('hero-image.webp'); 
+            background-size: cover; background-position: center; opacity: 0.15; z-index: 0;
+        }
+        .page-hero-content { position: relative; z-index: 1; }
+        .page-hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; }
+        .page-hero p { font-size: 1.2rem; color: #dcdde1; max-width: 600px; margin: 0 auto; }
+
+        /* --- Layout Styles --- */
+        .section-padding { padding: 5rem 5%; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .sec-subtitle { color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 10px; }
+        .sec-title { font-size: 2.8rem; color: var(--primary); font-weight: 800; line-height: 1.2; }
+
+        /* --- Photo Gallery Grid (DYNAMIC) --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            cursor: pointer;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background-color: #e0e6ed; 
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(15, 52, 96, 0.95), transparent);
+            padding: 3rem 1.5rem 1.5rem;
+            color: var(--white);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .gallery-overlay h3 { font-size: 1.4rem; margin-bottom: 5px; text-transform: capitalize; }
+        
+        .loading-text { text-align: center; color: var(--text-muted); font-size: 1.2rem; width: 100%; grid-column: 1 / -1;}
+
+        /* Make the first image span two columns on large screens */
+        @media (min-width: 992px) {
+            .gallery-item.featured {
+                grid-column: span 2;
+                grid-row: span 2;
+                aspect-ratio: 16/9;
+            }
+            .gallery-item.featured .gallery-overlay {
+                padding: 4rem 2rem 2rem;
+            }
+            .gallery-item.featured .gallery-overlay h3 {
+                font-size: 2rem;
+            }
+        }
+
+        /* --- Custom Lightbox Modal --- */
+        .lightbox {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 52, 96, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            backdrop-filter: blur(8px);
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox-header {
+            position: absolute; top: 20px; left: 0; width: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 40px; z-index: 2001;
+        }
+        .lightbox-title {
+            color: var(--highlight); font-size: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .lightbox-close {
+            font-size: 3.5rem; color: var(--white); cursor: pointer; line-height: 1; transition: var(--transition);
+        }
+        .lightbox-close:hover { color: var(--accent); transform: scale(1.1); }
+        
+        .lightbox-content {
+            position: relative; max-width: 90%; height: 75vh;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .lightbox-img {
+            max-width: 100%; max-height: 100%;
+            border-radius: 10px; box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            object-fit: contain; display: none;
+        }
+        .lightbox-img.active { display: block; animation: slideIn 0.4s ease-out; }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .lightbox-controls {
+            display: flex; gap: 30px; margin-top: 30px; align-items: center;
+        }
+        .lightbox-btn {
+            background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; 
+            width: 55px; height: 55px; border-radius: 50%; font-size: 1.5rem; 
+            cursor: pointer; transition: var(--transition); display: flex; justify-content: center; align-items: center;
+        }
+        .lightbox-btn:hover { background: var(--accent); border-color: var(--accent); transform: scale(1.1); }
+        .lightbox-counter { color: rgba(255,255,255,0.7); font-size: 1.1rem; font-weight: 600; min-width: 60px; text-align: center; }
+
+        /* --- Daily Activities Cards --- */
+        .activities-section { background-color: var(--white); border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+        .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
+        .activity-card {
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: var(--transition);
+        }
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+            background: var(--white);
+            border-color: var(--accent);
+        }
+        .activity-icon {
+            width: 80px; height: 80px; margin: 0 auto 1.5rem;
+            background: rgba(233, 69, 96, 0.1); color: var(--accent);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 2.5rem; transition: var(--transition);
+        }
+        .activity-card:hover .activity-icon { background: var(--accent); color: var(--white); }
+        .activity-card h3 { color: var(--primary); font-size: 1.4rem; margin-bottom: 15px; }
+        .activity-card p { color: var(--text-muted); font-size: 1rem; }
+
+        /* --- Campus Highlights (Dark Section) --- */
+        .campus-section { background-color: var(--primary); color: var(--white); }
+        .campus-section .sec-title { color: var(--white); }
+        .campus-section .sec-subtitle { color: var(--highlight); }
+        
+        .campus-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .campus-text ul { list-style: none; margin-top: 2rem; }
+        .campus-text li {
+            position: relative; padding-left: 2.5rem; margin-bottom: 1.5rem;
+            font-size: 1.1rem; color: #dcdde1;
+        }
+        .campus-text li::before {
+            content: '✓'; position: absolute; left: 0; top: 0;
+            color: var(--highlight); font-weight: 800; font-size: 1.2rem;
+            background: rgba(255,255,255,0.1); width: 30px; height: 30px;
+            display: flex; align-items: center; justify-content: center; border-radius: 50%;
+        }
+        .campus-img-box {
+            border-radius: 20px; overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 4px solid rgba(255,255,255,0.1);
+        }
+        .campus-img-box img { width: 100%; height: auto; display: block; object-fit: cover; min-height: 400px; background: #2c3e50;}
+
+        /* --- Desktop Hamburger Base (Hidden on Desktop) --- */
+        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 6px; z-index: 1005; }
+        .hamburger span { display: block; width: 28px; height: 3px; background-color: var(--primary); border-radius: 3px; transition: var(--transition); }
+
+        /* --- Footer --- */
+        footer { background-color: #0a192f; color: var(--white); padding: 5rem 5% 2rem; border-top: 5px solid var(--accent); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr 1.5fr; gap: 3rem; max-width: 1400px; margin: 0 auto 3rem; }
+        .f-brand img { height: 70px; margin-bottom: 1rem; filter: brightness(0) invert(1); }
+        .f-text { color: #a4b0be; margin-bottom: 2rem; max-width: 400px; }
+        .f-title { font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--white); font-weight: 600; }
+        .f-links { list-style: none; }
+        .f-links li { margin-bottom: 10px; }
+        .f-links a { color: #a4b0be; text-decoration: none; transition: var(--transition); }
+        .f-links a:hover { color: var(--accent); padding-left: 5px; }
+        .copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #718093; font-size: 0.9rem; }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 992px) {
+            .campus-content { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem;}
+        }
+
+        @media (max-width: 768px) {
+            .top-bar { flex-direction: column; gap: 10px; text-align: center; } 
+            .footer-grid { grid-template-columns: 1fr; }
+            .sec-title { font-size: 2.3rem; }
+            .page-hero h1 { font-size: 2.8rem; }
+            .lightbox-header { padding: 0 20px; }
+            .lightbox-title { font-size: 1.2rem; }
+
+            /* Show Hamburger on Mobile */
+            .hamburger { display: flex; }
+
+            /* Turn Nav Links into a Sliding Sidebar */
+            .nav-links {
+                position: fixed; top: 0; right: -100%; width: 75%; max-width: 300px; height: 100vh;
+                background-color: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px);
+                flex-direction: column; justify-content: center; align-items: center; gap: 2rem;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1); transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+                z-index: 1002; margin: 0;
+            }
+
+            .nav-links.nav-active { right: 0; }
+
+            /* Animate Hamburger into an 'X' */
+            .hamburger.toggle span:nth-child(1) { transform: translateY(9px) rotate(45deg); background-color: var(--accent); }
+            .hamburger.toggle span:nth-child(2) { opacity: 0; }
+            .hamburger.toggle span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: var(--accent); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div>📍 Ramnagar, Nainital - 244715, Uttarakhand</div>
+        <div>
+            📞 <a href="tel:+918218465742" style="color: inherit; text-decoration: none;">+91-8218465742</a> | 
+            ✉️ <a href="mailto:jkssofficial1999@gmail.com" style="color: inherit; text-decoration: none;">jkssofficial1999@gmail.com</a>
+        </div>
+    </div>
+
+    <header id="header">
+        <nav>
+            <a href="index.html" class="brand">
+                <img src="logo-trnsprt.webp" alt="Jai Kishan Shiksha Sansthan Logo">
+                <div class="brand-text">
+                    <span class="brand-name">Jai Kishan</span>
+                    <span class="brand-sub">Shiksha Sansthan</span>
+                </div>
+            </a>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="school-life.html" class="active">School Life</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admission.html" class="btn-nav">Admission</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-content reveal">
+            <h1>Vibrant Campus Life</h1>
+            <p>At Jai Kishan Shiksha Sansthan, education goes beyond the books. Experience the joy of learning, creativity, and growth.</p>
+        </div>
+    </section>
+
+    <section class="section-padding container">
+        <div class="section-header reveal">
+            <span class="sec-subtitle">Moments of Joy</span>
+            <h2 class="sec-title">Our School Gallery</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 15px auto 0;">Click on any category to view the complete photo album.</p>
+        </div>
+
+        <div class="gallery-grid" id="dynamic-gallery">
+            <div class="loading-text">Fetching latest gallery images...</div>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-header">
+            <div class="lightbox-title" id="lightbox-title">Category Name</div>
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        </div>
+        
+        <div class="lightbox-content" id="lightbox-images">
+            </div>
+        
+        <div class="lightbox-controls">
+            <button class="lightbox-btn" onclick="changeSlide(-1)">&#10094;</button>
+            <div class="lightbox-counter" id="lightbox-counter">1 / 1</div>
+            <button class="lightbox-btn" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <section class="section-padding activities-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="sec-subtitle">Holistic Development</span>
+                <h2 class="sec-title">A Day in the Life</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 15px auto 0;">Our structured yet engaging daily routine ensures that children develop socially, academically, and physically.</p>
+            </div>
+
+            <div class="activities-grid">
+                <div class="activity-card reveal delay-1">
+                    <div class="activity-icon">📚</div>
+                    <h3>Core Academics</h3>
+                    <p>Dedicated morning hours focused heavily on foundational reading, writing, and mathematics with personalized attention.</p>
+                </div>
+                <div class="activity-card reveal delay-2">
+                    <div class="activity-icon">🎨</div>
+                    <h3>Creative Expression</h3>
+                    <p>Daily sessions for arts, crafts, and drawing to allow young minds to explore their wild imaginations freely.</p>
+                </div>
+                <div class="activity-card reveal delay-3">
+                    <div class="activity-icon">🏃‍♂️</div>
+                    <h3>Play & Physical Education</h3>
+                    <p>Guided outdoor playtime to develop basic motor skills, teamwork, and ensure physical well-being.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding campus-section">
+        <div class="container campus-content">
+            <div class="campus-text reveal delay-1">
+                <span class="sec-subtitle">A Safe Haven</span>
+                <h2 class="sec-title">Our Campus Facilities</h2>
+                <p style="font-size: 1.1rem; color: #dcdde1; margin-top: 1.5rem; line-height: 1.8;">
+                    We have designed our campus to feel like a second home. Because we focus strictly on primary education, the environment is never overwhelming for young children. 
+                </p>
+                <ul>
+                    <li><strong>Secure Environment:</strong> Fully enclosed campus with dedicated staff supervision at all times.</li>
+                    <li><strong>Child-Friendly Classrooms:</strong> Bright, clean, and highly ventilated learning spaces.</li>
+                    <li><strong>Clean Sanitation:</strong> Extremely strict hygiene protocols for washrooms and drinking water facilities.</li>
+                    <li><strong>Activity Area:</strong> Safe indoor and outdoor zones dedicated to play-way learning.</li>
+                </ul>
+            </div>
+            <div class="campus-img-box reveal delay-2">
+                <img src="photo.webp" alt="School Campus and Facilities">
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact-footer">
+        <div class="footer-grid">
+            <div>
+                <a href="index.html" class="f-brand">
+                    <img src="logo-trnsprt.webp" alt="Footer Logo">
+                </a>
+                <p class="f-text">A premier primary educational institution dedicated to building a strong, secure, and joyful foundation for children from Nursery to Class 5th.</p>
+            </div>
+            
+            <div>
+                <h3 class="f-title">Quick Links</h3>
+                <ul class="f-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="school-life.html">School Life</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="f-title">Document Center</h3>
+                <ul class="f-links">
+                    <li><a href="about.html#documents">Fee Structure</a></li>
+                    <li><a href="about.html#documents">Book List</a></li>
+                    <li><a href="about.html#documents">Registration Form</a></li>
+                    <li><a href="about.html#documents">School Documents</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="f-title">Contact Us</h3>
+                <ul class="f-links" style="color: #a4b0be; line-height: 2;">
+                    <li>📍 Vipin Vihar, Kotdwar, Ramnagar,<br> Nainital, Uttarakhand - 244715</li>
+                    <li>📞 <a href="tel:+918218465742" style="color: inherit; text-decoration: none;">+91-8218465742</a></li>
+                    <li>✉️ <a href="mailto:jkssofficial1999@gmail.com" style="color: inherit; text-decoration: none;">jkssofficial1999@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            © 2026 Jai Kishan Shiksha Sansthan. All Rights Reserved. Designed for Educational Excellence.
+        </div>
+    </footer>
+
+    <script>
+        // --- Sticky Header Script ---
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // --- Scroll Reveal Animation Script ---
+        function revealElements() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            const elementVisible = 100;
+
+            reveals.forEach(reveal => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealElements);
+        revealElements(); // Run once on load
+
+        // --- Hamburger Mobile Menu Script ---
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const mobileLinks = document.querySelectorAll('.nav-links li a');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+            hamburger.classList.toggle('toggle');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('nav-active');
+                hamburger.classList.remove('toggle');
+            });
+        });
+
+        // --- Dynamic Gallery Script (Google Sheets) ---
+        // Your Google Sheet ID
+        const sheetId = '1kJYzd5aZHjT6vyB-BhuQNjDKYPBa9xoFLayNqFkiI6w';
+        // Google Visualization API CSV Export link
+        const galleryCsvUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=Gallery`;
+
+        let galleryData = {}; // Object to hold { "CategoryName": ["url1", "url2"] }
+        let currentLightboxImages = [];
+        let currentSlideIndex = 0;
+
+        async function fetchGallery() {
+            try {
+                const response = await fetch(galleryCsvUrl);
+                if (!response.ok) throw new Error("Network response was not ok");
+                const data = await response.text();
+                parseAndBuildGallery(data);
+            } catch (error) {
+                console.error('Error fetching gallery data:', error);
+                document.getElementById('dynamic-gallery').innerHTML = '<div class="loading-text" style="color: red;">Error loading gallery. Please ensure Google Sheet sharing is set to "Anyone with the link can view".</div>';
+            }
+        }
+
+        function parseAndBuildGallery(csv) {
+            const rows = csv.split('\n');
+            const grid = document.getElementById('dynamic-gallery');
+            grid.innerHTML = ''; // Clear loading text
+            galleryData = {}; // Reset data
+
+            // Start from i=1 to skip the header row (Category, Image URL)
+            for (let i = 1; i < rows.length; i++) {
+                // Regex splits safely by commas, ignoring commas inside quotes
+                let row = rows[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+                if (row.length >= 2) {
+                    let category = row[0].replace(/^"|"$/g, '').trim();
+                    let url = row[1].replace(/^"|"$/g, '').trim();
+
+                    if (category && url) {
+                        if (!galleryData[category]) {
+                            galleryData[category] = [];
+                        }
+                        galleryData[category].push(url);
+                    }
+                }
+            }
+
+            // Build the Grid Boxes
+            let index = 0;
+            const categoryNames = Object.keys(galleryData);
+            
+            if (categoryNames.length === 0) {
+                grid.innerHTML = '<div class="loading-text">Gallery is currently empty. Add rows to your Google Sheet!</div>';
+                return;
+            }
+
+            categoryNames.forEach((category) => {
+                const images = galleryData[category];
+                const coverImage = images[0]; // First image in category
+                
+                const item = document.createElement('div');
+                // Cycle through delays 1, 2, 3 for staggered animation
+                item.className = `gallery-item reveal active delay-${(index % 3) + 1}`;
+                
+                // Make the very first category large (featured)
+                if (index === 0) item.classList.add('featured'); 
+
+                item.onclick = () => openLightbox(category);
+
+                item.innerHTML = `
+                    <img src="${coverImage}" alt="${category}">
+                    <div class="gallery-overlay">
+                        <h3>${category}</h3>
+                        <p style="font-size: 0.95rem; font-weight: 600; opacity: 0.9; color: var(--highlight);">
+                            📸 ${images.length} Photos
+                        </p>
+                    </div>
+                `;
+                grid.appendChild(item);
+                index++;
+            });
+        }
+
+        // --- Lightbox Functions ---
+        function openLightbox(category) {
+            currentLightboxImages = galleryData[category];
+            currentSlideIndex = 0;
+            document.getElementById('lightbox-title').innerText = category;
+            
+            const imgContainer = document.getElementById('lightbox-images');
+            imgContainer.innerHTML = ''; // clear old images
+            
+            // Generate Image Elements for the slider
+            currentLightboxImages.forEach((url, i) => {
+                const img = document.createElement('img');
+                img.src = url;
+                img.className = 'lightbox-img';
+                if (i === 0) img.classList.add('active'); // show first
+                imgContainer.appendChild(img);
+            });
+
+            updateCounter();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore background scrolling
+        }
+
+        function changeSlide(direction) {
+            if (currentLightboxImages.length <= 1) return; // Do nothing if only 1 image
+
+            const images = document.querySelectorAll('.lightbox-img');
+            images[currentSlideIndex].classList.remove('active');
+            
+            currentSlideIndex += direction;
+            
+            // Loop around if out of bounds
+            if (currentSlideIndex >= images.length) currentSlideIndex = 0;
+            if (currentSlideIndex < 0) currentSlideIndex = images.length - 1;
+            
+            images[currentSlideIndex].classList.add('active');
+            updateCounter();
+        }
+
+        function updateCounter() {
+            document.getElementById('lightbox-counter').innerText = `${currentSlideIndex + 1} / ${currentLightboxImages.length}`;
+        }
+
+        // Close lightbox if clicking outside the image
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox' || e.target.id === 'lightbox-images') {
+                closeLightbox();
+            }
+        });
+
+        // Run fetch on load
+        window.addEventListener('DOMContentLoaded', fetchGallery);
+
+    </script>
+</body>
+</html>
