@@ -20,11 +20,11 @@
       "description": "Premium Primary education from Nursery to Class 5th.",
       "image": "https://www.jaikishanshikshasansthan.in/logo.webp", 
       "logo": "https://www.jaikishanshikshasansthan.in/logo.webp",
-      "url": "https://www.jaikishanshikshasansthan.in",
+      "url": "https://www.jaikishanshikshasansthan.in/school-life.html",
       "telephone": "+91-8218465742",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Ramnagar",
+        "streetAddress": "Vipin Vihar, Kotdwar, Ramnagar",
         "addressLocality": "Nainital",
         "addressRegion": "Uttarakhand",
         "postalCode": "244715",
@@ -163,19 +163,20 @@
         .gallery-item:hover img {
             transform: scale(1.1);
         }
+        
+        /* UPDATED: Overlay is now permanently visible */
         .gallery-overlay {
             position: absolute;
             bottom: 0; left: 0; right: 0;
             background: linear-gradient(to top, rgba(15, 52, 96, 0.95), transparent);
             padding: 3rem 1.5rem 1.5rem;
             color: var(--white);
-            transform: translateY(20px);
-            opacity: 0;
-            transition: var(--transition);
+            /* Removed translateY and opacity=0 so it always shows */
+            transition: padding 0.3s ease; 
         }
         .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-            opacity: 1;
+            /* Optional: Add a slight padding boost on hover for effect */
+            padding-bottom: 2rem; 
         }
         .gallery-overlay h3 { font-size: 1.4rem; margin-bottom: 5px; text-transform: capitalize; }
         
@@ -200,8 +201,8 @@
         .lightbox {
             display: none; /* Hidden by default */
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(15, 52, 96, 0.95);
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(15, 52, 96, 0.98);
             z-index: 2000;
             align-items: center;
             justify-content: center;
@@ -225,11 +226,15 @@
         .lightbox-close:hover { color: var(--accent); transform: scale(1.1); }
         
         .lightbox-content {
-            position: relative; max-width: 90%; height: 75vh;
+            position: relative; width: 100%; height: 75vh;
             display: flex; align-items: center; justify-content: center;
+            padding: 0 20px; /* Padding to ensure images don't touch screen edges */
         }
+        
+        /* UPDATED: Mobile strict constraints for lightbox images */
         .lightbox-img {
             max-width: 100%; max-height: 100%;
+            width: auto; height: auto; /* Ensure aspect ratio is maintained */
             border-radius: 10px; box-shadow: 0 15px 40px rgba(0,0,0,0.4);
             object-fit: contain; display: none;
         }
@@ -334,8 +339,14 @@
             .footer-grid { grid-template-columns: 1fr; }
             .sec-title { font-size: 2.3rem; }
             .page-hero h1 { font-size: 2.8rem; }
-            .lightbox-header { padding: 0 20px; }
-            .lightbox-title { font-size: 1.2rem; }
+            
+            /* Responsive Lightbox Fixes */
+            .lightbox-header { padding: 0 15px; }
+            .lightbox-title { font-size: 1rem; }
+            .lightbox-close { font-size: 2.5rem; }
+            .lightbox-content { height: 65vh; padding: 0 10px; }
+            .lightbox-controls { gap: 15px; margin-top: 20px; }
+            .lightbox-btn { width: 45px; height: 45px; font-size: 1.2rem; }
 
             /* Show Hamburger on Mobile */
             .hamburger { display: flex; }
@@ -473,7 +484,7 @@
                 </ul>
             </div>
             <div class="campus-img-box reveal delay-2">
-                <img src="photo.webp" alt="School Campus and Facilities">
+                <img src="campus-facility.webp" alt="School Campus and Facilities">
             </div>
         </div>
     </section>
